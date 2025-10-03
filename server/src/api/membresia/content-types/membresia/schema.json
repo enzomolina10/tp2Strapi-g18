@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "membresias",
+  "info": {
+    "singularName": "membresia",
+    "pluralName": "membresias",
+    "displayName": "membresia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_membresia": {
+      "type": "uid"
+    },
+    "id_usuarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "id_pagos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pago.pago"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "fecha_inicio": {
+      "type": "datetime"
+    },
+    "fecha_fin": {
+      "type": "datetime"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "activo",
+        "baja",
+        "expirado"
+      ]
+    }
+  }
+}
